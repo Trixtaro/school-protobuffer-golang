@@ -1,20 +1,19 @@
-DROP TABLE IF EXISTS students;
-
-CREATE TABLE students (
+CREATE TABLE IF NOT EXISTS students (
     id VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     age INT NOT NULL
 );
 
-CREATE TABLE tests (
+CREATE TABLE IF NOT EXISTS tests (
     id VARCHAR(32) PRIMARY KEY,
     name VARCHAR(32) NOT NULL
 );
 
-CREATE TABLE questions (
+CREATE TABLE IF NOT EXISTS questions (
     id VARCHAR(32) PRIMARY KEY,
     test_id VARCHAR(32) NOT NULL,
     question VARCHAR(255) NOT NULL,
     answer VARCHAR(255) NOT NULL,
     FOREIGN KEY (test_id) REFERENCES tests(id)
 );
+
