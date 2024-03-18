@@ -1,4 +1,15 @@
 services:
+  app:
+    build: .
+    command: /app/bin/start
+    environment:
+      DB_USER: $DB_USER
+      DB_PASSWORD: $DB_PASSWORD
+      DB_NAME: $DB_NAME
+    ports:
+      - "5060:5060"
+    depends_on:
+      - postgres
   postgres:
     build: ./database
     ports:

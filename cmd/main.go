@@ -24,7 +24,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	connection_url := "postgres://"+os.Getenv("DB_USER")+":"+os.Getenv("DB_PASSWORD")+"@localhost:5432/"+os.Getenv("DB_NAME")+"?sslmode=disable"
+	connection_url := "postgres://"+os.Getenv("DB_USER")+":"+os.Getenv("DB_PASSWORD")+"@postgres:5432/"+os.Getenv("DB_NAME")+"?sslmode=disable"
 	fmt.Println(connection_url)
 
 	repo, err := database.NewPostgresRepository(connection_url)
