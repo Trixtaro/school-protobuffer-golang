@@ -1,5 +1,5 @@
 # Use the official Golang image as the base image
-FROM golang:1.22
+FROM golang:1.25.0
 
 # Install the protobuf compiler
 RUN apt-get update && apt-get install -y protobuf-compiler
